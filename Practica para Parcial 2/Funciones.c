@@ -171,11 +171,11 @@ int menu ( )
     char auxOption[2];
     int option;
     system("cls") ;
-    printf("\n\t\t*** Menu de Opciones ***\n\n");
-    printf("1-ALTAS \n");
-    printf("2-MODIFICAR \n") ;
-    printf("3-BAJAS \n");
-    printf("4-INFORMAR \n");
+    printf("\n\t\t*** MENU PRINCIPAL ***\n\n");
+    printf("1-MENUES \n");
+    printf("2-EMPLEADOS \n") ;
+    printf("3-ALMUERZOS \n");
+    printf("4-INFORMES \n");
     printf("5-SALIR\n\n") ;
     while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
     {
@@ -190,7 +190,7 @@ int menuModificar ()
 {
     char auxOption[2];
     int option;
-    printf("\n\n*** Modificar empleado ***\n\n1 - Nombre\n2 - Apellido\n3 - Sueldo\n4 - Sector\n5 - Regresar al menu principal\n\n");
+    printf("\n\n*** Modificar empleado ***\n\n1 - Nombre\n2 - Apellido\n3 - Sexo\n4 - Salario\n5 - Fecha de ingreso\n6 - Sector\n\n7 - Regresar al menu principal\n\n");
 while(!function_getStringNumeros("Ingrese opcion: ",auxOption))
 {
     printf("*** Error *** Debe ingresar un numero.\n");
@@ -198,5 +198,48 @@ while(!function_getStringNumeros("Ingrese opcion: ",auxOption))
     printf("\n");
 }
     option = atoi(auxOption);
+    return option;
+}
+
+int menuEmpleados ( )
+{
+    char auxOption[2];
+    int option;
+    system("cls") ;
+    printf("\n\t\t*** MENU EMPLEADOS ***\n\n");
+    printf("1-ALTAS \n");
+    printf("2-MODIFCAR \n") ;
+    printf("3-BAJAS \n");
+    printf("4-VER EMPLEADOS \n\n");
+    printf("5-VOLVER AL MENU PRINCIPAL\n\n") ;
+    while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
+    {
+        printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;
+        system("pause") ;
+
+    }
+    option = atoi(auxOption) ;
+    return option;
+}
+
+
+int menuDeLosMenues ( )
+{
+    char auxOption[2];
+    int option;
+    system("cls") ;
+    printf("\n\t\t*** MENUES ***\n\n");
+    printf("1-ALTAS \n");
+    printf("2-MODIFCAR \n") ;
+    printf("3-BAJAS \n");
+    printf("4-VER MENUES \n\n");
+    printf("5-VOLVER AL MENU PRINCIPAL\n\n") ;
+    while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
+    {
+        printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;
+        system("pause") ;
+
+    }
+    option = atoi(auxOption) ;
     return option;
 }

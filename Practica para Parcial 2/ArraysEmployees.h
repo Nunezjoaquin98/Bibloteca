@@ -8,7 +8,7 @@ typedef struct
     int isEmpty;
     eFecha ingreso;
     eSector sec;
-}eEmployee;
+} eEmployee;
 
 //Funciones de empleados
 
@@ -28,7 +28,7 @@ int initEmployees(eEmployee list[], int len) ;
  * \return Devuelve el indice dond eesta vacio, y si no lo esta devuelve -1.
  *
  */
- int searchEmpty(eEmployee list[],int len);
+int searchEmpty(eEmployee list[],int len);
 
 
 /** \brief  find an Employee by Id en returns the index position in array.
@@ -39,22 +39,23 @@ int initEmployees(eEmployee list[], int len) ;
  * \return  Return employee index position or (-1) if the employee not found.
  *
  */
- int findEmployeeById(eEmployee list[], int len, int id) ;
+int findEmployeeById(eEmployee list[], int len, int id) ;
 
- /** \brief show employee of a list
-  *
-  * \param array
-  *
-  */
-void showEmployee(eEmployee list);
+/** \brief show employee of a list
+ *
+ * \param array
+ *
+ */
+void showEmployee(eEmployee list,eSector listC[],int lenSector);
 
- /** \brief show employee of a list
-  *
-  * \param array employee
-  * \param lenght int
-  *
-  */
-void showEmployees(eEmployee list[],int len);
+/** \brief show employee of a list
+ *
+ * \param array employee
+ * \param array sector
+ * \param lenght sector int
+ *
+ */
+void showEmployees(eEmployee list[],int len,eSector listSec[],int lenSector);
 
 /** \brief add in a existing list of employees the values received as parameters
  * in the first empty position
@@ -62,28 +63,30 @@ void showEmployees(eEmployee list[],int len);
 * \return int Return (-1) if Error [Invalid length or NULL pointer or without
 free space] - (0) if Ok
  */
-int addEmployee(eEmployee list[], int len) ;
+int addEmployee(eEmployee list[], int len,eSector listSec[],int lenSec) ;
 
-void modifyEmployee(eEmployee list[], int len) ;
+void modifyEmployee(eEmployee list[], int len,eSector listSeC[],int lenSec);
 
 
- /** \brief carga una lista de empleados
-  *
-  * \param array employee
-  *
-  */
+/** \brief carga una lista de empleados
+ *
+ * \param array employee
+ *
+ */
 void hardcodeoEmpleados(eEmployee* list);
 
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
  *
  * \param list Employee*
- * \param len int
+ * \param lenght int
  * \param id int
+ * \param list Sector
+ * \param lenght sector int
  * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
 find a employee] - (0) if Ok
  *
  */
-int removeEmployee(eEmployee list[], int len,int id) ;
+int removeEmployee(eEmployee list[], int len,int id,eSector listSec[],int lenSec) ;
 
 /** \brief Sort the elements in the array of employees, the argument order
 indicate UP or DOWN order

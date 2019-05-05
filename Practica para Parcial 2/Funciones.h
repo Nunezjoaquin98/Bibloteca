@@ -144,3 +144,12 @@ int menu ( ) ;
  *
  */
 int menuModificar ();
+
+/** \brief Menu de opciones de los empleados
+ *
+ * \return Opcion ingresada
+ *
+ */
+int menuEmpleados ( );
+
+int menuDeLosMenues ( );

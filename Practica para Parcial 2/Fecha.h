@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 typedef struct
 {
     int dia;
@@ -10,9 +6,25 @@ typedef struct
 }eFecha;
 
 
-/** \brief ingresa una fecha formato dd/mm/aaaa
+/** \brief ingresa un dia valido del 1 al 31
  *
- * \return una fecha validada
+ *
  *
  */
-eFecha ingresarFecha();
+void ingresarDia(char auxDia[]);
+
+
+/** \brief ingresa un mes valido del 1 al 12
+ *
+ *
+ *
+ */
+void ingresarMes(char auxMes[]);
+
+
+/** \brief ingresa un anio
+ *
+ * \return
+ *
+ */
+void ingresarAnio(char auxAnio[]);

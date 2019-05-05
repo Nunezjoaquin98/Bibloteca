@@ -1,7 +1,7 @@
 typedef struct
 {
     int id;
-    char edescripcion[51];
+    char descripcion[51];
 }eSector;
 
 /** \brief Muestra todos los sectores cargados con su id y descripcion
@@ -10,3 +10,12 @@ typedef struct
  *
  */
 void mostrarSectores();
+
+int obtenerSector(eSector sec[], int len, int idS, char desc[]);
+
+/** \brief se carga un array de sectores
+ *
+ * \param eSector array
+ *
+ */
+void hardcodeoSectores(eSector* list);

@@ -1,24 +1,22 @@
 # depslib dependency file v1.0
-1557071724 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\fecha.c
+1557078646 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\fecha.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"Funciones.h"
 	"Fecha.h"
 
-1557071734 c:\users\joaco\documents\facultad joaco\practica para parcial 2\fecha.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
+1557079951 c:\users\joaco\documents\facultad joaco\practica para parcial 2\fecha.h
 
-1556659282 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\funciones.c
+1557090522 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Funciones.h"
 
-1557071752 c:\users\joaco\documents\facultad joaco\practica para parcial 2\funciones.h
+1557090528 c:\users\joaco\documents\facultad joaco\practica para parcial 2\funciones.h
 
-1557072370 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.c
+1557091330 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -27,20 +25,30 @@
 	"Funciones.h"
 	"ArraysEmployees.h"
 
-1556658818 c:\users\joaco\documents\facultad joaco\practica para parcial 2\sectores.h
+1557079719 c:\users\joaco\documents\facultad joaco\practica para parcial 2\sectores.h
 
-1557073104 c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.h
+1557088256 c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.h
 
-1557072514 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\main.c
+1557091795 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\main.c
 	<stdio.h>
 	<stdlib.h>
-	"ArraysEmployees.h"
 	"funciones.h"
 	"Sectores.h"
 	"Fecha.h"
+	"ArraysEmployees.h"
+	"menues.h"
 
-1557071940 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\sectores.c
+1557077002 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\sectores.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"Sectores.h"
+
+1557092300 c:\users\joaco\documents\facultad joaco\practica para parcial 2\menues.h
+
+1557092305 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\menues.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menues.h"
 
