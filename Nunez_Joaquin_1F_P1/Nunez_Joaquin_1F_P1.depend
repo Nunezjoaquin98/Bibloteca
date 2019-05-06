@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1557179952 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"fecha.h"
+
+1557179275 c:\users\alumno\desktop\nunez_joaquin_1f_p1\funciones.h
+
+1557179997 c:\users\alumno\desktop\nunez_joaquin_1f_p1\fecha.h
+
+1557181390 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1557179195 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	<string.h>
+
+1557183788 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"funciones.h"
+	"socios.h"
+
+1557183847 c:\users\alumno\desktop\nunez_joaquin_1f_p1\socios.h
+

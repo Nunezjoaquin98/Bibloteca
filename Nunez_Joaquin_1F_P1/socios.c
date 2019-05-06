@@ -117,7 +117,7 @@ int addSocio(eSocios list[], int len)
 
             index++; // se suma uno asi el primer socio no tiene codigo "0"
             printf("\nNuevo socio, codigo de socio numero %d. \n\n",index) ;
-            newSocio.legajo = index ;
+            newSocio.codigoDeSocio = index ;
             while(!function_getStringLetras("Ingrese nombre: ",auxName)) //carga el nombre
             {
                 printf("El nombre solo debe tener letras.\n\n") ;
@@ -159,7 +159,7 @@ int addSocio(eSocios list[], int len)
                 system("pause");
                 system("cls");
             }
-            printf("\nIngrese el email: ")
+            printf("\nIngrese el email: ");
            gets(auxEmail); // carga de mail
 
                        //FECHA DE SOCIO
@@ -261,7 +261,7 @@ void modifySocio(eSocios list[], int len)
                 {
                     printf("*** ERROR *** El apellido debe tener solo letras.\n\n");
                 }
-                strcpy(list[index].lastName,newLastName);
+                strcpy(list[index].apellido,newLastName);
                 printf("\n\n        ***Modificacion exitosa***\n\n");
                 system("pause");
                 system("cls");
@@ -279,19 +279,19 @@ void modifySocio(eSocios list[], int len)
                         system("pause");
                         system("cls");
                     }
-                    sex = atoi(newSex);
-                    if(sex == 1)
+                    sexo = atoi(newSex);
+                    if(sexo == 1)
                     {
                         strcpy(newSex,"Masculino");
                     }
-                    else if(sex == 2)
+                    else if(sexo == 2)
                     {
                         strcpy(newSex,"Femenino");
                     }
 
                 }
-                while(!(sex == 1 || sex == 2));
-                strcpy(list[index].sex,newSex);
+                while(!(sexo == 1 || sexo == 2));
+                strcpy(list[index].sexo,newSex);
                 printf("\n\n        ***Modificacion exitosa***\n\n");
                 system("pause");
                 system("cls") ;
@@ -328,7 +328,7 @@ void modifySocio(eSocios list[], int len)
                 showSocio(list[index]);
                 printf("\n\tModificar email\n\nIngrese el nuevo email:");
                 gets(newEmail);
-                strcpy(list[index].email,newEmail)
+                strcpy(list[index].email,newEmail);
                 printf("\n\n        ***Modificacion exitosa***\n\n");
                 system("pause");
                 system("cls") ;
@@ -431,9 +431,9 @@ int removeSocio(eSocios list[], int len,int id)
     return ret;
 }
 
-int sortEmployees(eSocios list[], int len)
+int sortSocios(eSocios list[], int len)
 {
-    eEmployee auxEmployee;
+    eSocios auxSocio;
     int ret;
 
     if(list != NULL && len > 0)
@@ -442,17 +442,17 @@ int sortEmployees(eSocios list[], int len)
         {
             for(int j=i+1; j<len; j++)
             {
-                if(strcmp(list[i].lastName,list[j].lastName) > 0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                if(strcmp(list[i].apellido,list[j].apellido) > 0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
                 {
-                    auxEmployee = list[i];
+                    auxSocio = list[i];
                     list[i] = list[j];
-                    list[j] = auxEmployee ;
+                    list[j] = auxSocio ;
                 }
-                else if(strcmp(list[i].lastName,list[j].lastName) == 0 && strcmp(list[i].name,list[j].name)>0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                else if(strcmp(list[i].apellido,list[j].apellido) == 0 && strcmp(list[i].nombre,list[j].nombre)>0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
                 {
-                    auxEmployee = list[i];
+                    auxSocio = list[i];
                     list[i] = list[j];
-                    list[j] = auxEmployee ;
+                    list[j] = auxSocio ;
                 }
 
             }
@@ -471,6 +471,8 @@ int sortEmployees(eSocios list[], int len)
 
 }
 
+
+/*
 void function_averageSalary (eEmployee list[],int len)
 {
     float acum,promedio,contador;
@@ -524,7 +526,7 @@ int hayEmpleadoCargado (eEmployee list[],int len)
     return ret;
 }
 
-
+*/
 int menuSocios ( )
 {
     char auxOption[2];
@@ -534,8 +536,11 @@ int menuSocios ( )
     printf("1-ALTAS \n");
     printf("2-MODIFCAR \n") ;
     printf("3-BAJAS \n");
-    printf("4-LISTAR \n\n");
-    printf("5-VOLVER AL MENU PRINCIPAL\n\n") ;
+    printf("4-LISTAR SOCIOS \n");
+    printf("5-LISTAR LIBROS \n");
+    printf("6-LISTAR AUTORES \n");
+    printf("4-LISTAR PRESTAMOS \n\n");
+    printf("8-VOLVER AL MENU PRINCIPAL\n\n") ;
     while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
     {
         printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;

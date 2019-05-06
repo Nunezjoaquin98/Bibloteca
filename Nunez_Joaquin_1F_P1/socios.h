@@ -3,7 +3,7 @@ typedef struct
     int codigoDeSocio;
     char apellido[31];
     char nombre[31];
-    char sexo[3];
+    char sexo[10];
     long int telefono;
     char email[31];
     eFecha fechaDeInscipcion;
@@ -91,16 +91,14 @@ find a socio] - (0) if Ok
  */
 
 
-/** \brief Sort the elements in the array of employees, the argument order
-indicate UP or DOWN order
+/** \brief Sort the elements in the array of employees,
  *
  * \param list socio*
  * \param len int
- * \param order int [1] indicate UP - [0] indicate DOWN
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int sortEmployees(eSocios list[], int len) ;
+int sortSocios(eSocios list[], int len) ;
 
 void function_averageSalary (eSocios list[],int len);
 
@@ -115,7 +113,7 @@ int menuSocios ( );
  *
  */
 
-int menuModificarSocios ()
+int menuModificarSocios ();
 /** \brief Menu de opciones para modificar el socio
 *
 * \return Opcion ingresada
