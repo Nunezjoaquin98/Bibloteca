@@ -237,7 +237,8 @@ void modifySocio(eSocios list[], int len)
        showSocio(list[index]) ;
         do
         {
-
+            system("cls");
+            showSocio(list[index]);
             switch(menuModificarSocios())
             {
             case 1:
@@ -397,7 +398,7 @@ int removeSocio(eSocios list[], int len,int id)
             {
                 showSocio(list[index]);
 
-                while(!function_getStringNumeros("\nEs este el empleado/a que desea borrar?\nIngrese 1 si es correcto / Otro numero si es incorrecto: ",auxYes))
+                while(!function_getStringNumeros("\nEs este el socio/a que desea borrar?\nIngrese 1 si es correcto / Otro numero si es incorrecto: ",auxYes))
                 {
                     printf("***Error*** Debe ingresar un numero.\n");
                     system("pause");
@@ -500,8 +501,8 @@ void function_averageSalary (eEmployee list[],int len)
     printf("\nEl total de todos los salarios es de: %.2f \nEl promedio de los salarios es: %.2f \nLa cantidad de empleados que superan el promedio es de: %d\n\n",acum,promedio,contEmplSuperan);
 
 }
-
-int hayEmpleadoCargado (eEmployee list[],int len)
+*/
+int haySocioCargado (eSocios list[],int len)
 {
     int ret = 0;
 
@@ -526,7 +527,7 @@ int hayEmpleadoCargado (eEmployee list[],int len)
     return ret;
 }
 
-*/
+
 int menuSocios ( )
 {
     char auxOption[2];

@@ -83,14 +83,13 @@ int removeSocio(eSocios list[], int len,int id);
  * \param list socio*
  * \param lenght int
  * \param id int
- * \param list Sector
- * \param lenght sector int
  * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
 find a socio] - (0) if Ok
  *
  */
 
 
+int sortSocios(eSocios list[], int len) ;
 /** \brief Sort the elements in the array of employees,
  *
  * \param list socio*
@@ -98,12 +97,16 @@ find a socio] - (0) if Ok
  * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
-int sortSocios(eSocios list[], int len) ;
 
-void function_averageSalary (eSocios list[],int len);
 
-int hayEmpleadoCargado (eSocios list[],int len);
-
+int haySocioCargado (eSocios list[],int len);
+/** \brief Informa si hay algun socio cargado en el array
+ *
+ * \param list socio
+ * \param lenght int
+ * \return devuelve 1 si esta cargado o -1 si no hay ningun socio
+ *
+ */
 
 
 int menuSocios ( );
