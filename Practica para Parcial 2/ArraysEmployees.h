@@ -1,8 +1,8 @@
 typedef struct
 {
     int legajo;
-    char name [51];
     char lastName[51];
+    char name [51];
     char sex[10];
     float salary;
     int isEmpty;
@@ -103,6 +103,3 @@ void function_averageSalary (eEmployee list[],int len);
 
 int hayEmpleadoCargado (eEmployee list[],int len);
 
-int obtenerApellido(eEmployee list[], int len, int idE, char apellido[]);
-
-int obtenerNombre(eEmployee list[], int len, int idE, char nombre[]);

@@ -14,9 +14,9 @@
 	<string.h>
 	"Funciones.h"
 
-1557090528 c:\users\joaco\documents\facultad joaco\practica para parcial 2\funciones.h
+1557173213 c:\users\joaco\documents\facultad joaco\practica para parcial 2\funciones.h
 
-1557153146 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.c
+1557171849 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -27,9 +27,9 @@
 
 1557079719 c:\users\joaco\documents\facultad joaco\practica para parcial 2\sectores.h
 
-1557152500 c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.h
+1557171066 c:\users\joaco\documents\facultad joaco\practica para parcial 2\arraysemployees.h
 
-1557159478 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\main.c
+1557169875 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
@@ -53,7 +53,7 @@
 	<string.h>
 	"menues.h"
 
-1557159337 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\almuerzos.c
+1557166529 source:c:\users\joaco\documents\facultad joaco\practica para parcial 2\almuerzos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -64,5 +64,5 @@
 	"menues.h"
 	"almuerzos.h"
 
-1557159271 c:\users\joaco\documents\facultad joaco\practica para parcial 2\almuerzos.h
+1557164370 c:\users\joaco\documents\facultad joaco\practica para parcial 2\almuerzos.h
 

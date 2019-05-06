@@ -153,3 +153,5 @@ int menuModificar ();
 int menuEmpleados ( );
 
 int menuDeLosMenues ( );
+
+void function_validName(char text[]);

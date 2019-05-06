@@ -243,3 +243,31 @@ int menuDeLosMenues ( )
     option = atoi(auxOption) ;
     return option;
 }
+
+void function_validName(char text[])
+    {
+        int dentro_de_palabra = 0; // Al principio está fuera
+        for (int i = 0; text[i] != '\0'; i++)
+        {
+            if (text[i] == ' ')
+            {
+                dentro_de_palabra = 0; // Fuera de palabra
+            }
+            else
+            {
+                if (dentro_de_palabra)
+                {
+                    // Ya estábamos dentro de una palabra
+                    text[i] = tolower(text[i]);
+                }
+                else
+                {
+                    // Acabamos de entrar en una nueva palabra
+                    dentro_de_palabra = 1;
+                    text[i] = toupper(text[i]);
+                }
+            }
+        }
+    }
+
+

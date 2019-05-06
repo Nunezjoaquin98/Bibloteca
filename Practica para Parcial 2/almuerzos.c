@@ -81,7 +81,7 @@ int addLunch(eEmployee listE[],int lenE,eMenues listM[],int lenM,eAlmuerzos list
             {
                 printf("\nSeleccionar el menu correspondiente:\n");
                 showMenues(listM,lenM);
-                while(!function_getStringNumeros("\n\nIngrese el numero de ID del menu:",auxMenu))
+                while(!function_getStringNumeros("\n\nIngrese el numero de ID del menu: ",auxMenu))
                 {
                     printf("Error el ID debe tener solo numeros.\n\n");
                     system("pause");
@@ -93,7 +93,8 @@ int addLunch(eEmployee listE[],int lenE,eMenues listM[],int lenM,eAlmuerzos list
                 }
                 else
                 {
-                    printf("\n\nEl menu seleccionado es:\nID\tDescripcion\tImporte\n\n");
+                    system("cls");
+                    printf("\n\nEl menu seleccionado es:\n\nID\tDescripcion\tImporte\n");
                     showMenu(listM[indexMenu],lenM);
                 }
 
@@ -105,7 +106,7 @@ int addLunch(eEmployee listE[],int lenE,eMenues listM[],int lenM,eAlmuerzos list
             showEmployees(listE,lenE,listS,lenS);
             do
             {
-             while(!function_getStringNumeros("\nIngrese el numero de legajo del empleado/a:",auxLegajoEmp))
+             while(!function_getStringNumeros("\nIngrese el numero de legajo del empleado/a: ",auxLegajoEmp))
                 {
                     printf("\nError el legajo debe tener solo numeros.\n\n");
                     system("pause");
@@ -126,9 +127,9 @@ int addLunch(eEmployee listE[],int lenE,eMenues listM[],int lenM,eAlmuerzos list
 
             //carga de la fecha
             printf("\n\nIngresar fecha del almuerzo:\n");
-            ingresarAnio(anio);
-            ingresarMes(mes);
             ingresarDia(dia);
+            ingresarMes(mes);
+            ingresarAnio(anio);
 
             //se copian todos los datos al nuevo almuerzo
             newLunch.id = index;
@@ -185,5 +186,35 @@ void showLunch(eAlmuerzos listAlm,int lenAlm,eMenues listMen[],int lenMen,eEmplo
 
     indexMenu = findMenuById(listMen,lenMen,listAlm.menu.id);
     printf("\n\nMenu consumido: %s $%d",listMen[indexMenu].descripcion,listMen[indexMenu].importe);
+
+}
+
+void showLunches(eAlmuerzos listAlm[],int lenAlm,eMenues listMen[],int lenMen,eEmployee listEmp[],int lenEmp)
+{
+    for(int i = 0;i < lenAlm;i++)
+    {
+        if(listAlm[i].isEmpty == 0)
+        {
+            printf("\n________________________________________\n");
+            showLunch(listAlm[i],lenAlm,listMen,lenMen,listEmp,lenEmp);
+            printf("\n\n");
+        }
+    }
+}
+
+void hardcodeoAlmuerzos(eAlmuerzos* list)
+{
+eAlmuerzos alm[]=
+    {
+        {1,0,{1,60,"Sanguche de milenasa completo"},{1,"Riquelme","Juan","Masculino",20000,0,{12,05,2001},{1,"Recursos Humanos"}},{06,05,2019}},
+        {2,0,{1,60,"Sanguche de milenasa completo"},{5,"Nunez","Diego","Masculino",34000,0,{18,02,2019},{1,"Recursos Humanos"}},{02,03,2019}},
+        {3,0,{4,55,"Cafe + 2 medialunas"},{2,"Andrada","Sebastian","Masculino",18500,0,{05,05,2019},{3,"Ventas"}},{03,03,2019}},
+        {4,0,{5,25,"Galletitas Pitusas"},{3,"Sotto","Rocio","Femenino",12500,0,{03,05,2018},{4,"Administracion"}},{07,07,2019}},
+        {5,0,{2,120,"Pati completo + Papas con cheddar"},{4,"Perez","Sol","Femenino",50000,0,{20,06,2005},{5,"Legales"}},{05,05,2019}},
+    };
+    for(int i = 0; i< 5; i++)
+    {
+        list[i] = alm[i];
+    }
 
 }

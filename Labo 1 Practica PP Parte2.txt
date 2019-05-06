@@ -44,7 +44,7 @@ B)	Modificar: Se ingresará el Código de Empleado, permitiendo en un submenú modi
 •	Fecha de ingreso
 •	Sector
 C)	Baja:  Se ingresará el Código de Empleado y se realizará una baja lógica.
-D)	Listar: Hacer un único listado de todos los Empleados ordenados por apellido (ascendente) y nombre (ascendente).
+D)	Listar: Hacer un único listado de todos los Empleados ordenados por apellido (ascendente a-z)  y nombre (ascendente).
 
 ALMUERZOS: Se dará de alta cada ocurrencia de Almuerzo, relacionando Menu – Empleado, Fecha y Codigo de Almuerzo.
 
@@ -60,5 +60,8 @@ E)INFORMAR:
 NOTAS: 
 I.	Se deberá desarrollar bibliotecas por cada entidad, las cuales contendrán las funciones Alta, Baja, Modificar y Listar. 
 II.	Las validaciones deberán estar en una biblioteca aparte. 
-III.	Tener en cuenta que no se podrá ingresar a los casos Modificar, Baja y Listar; sin antes haber realizado al menos un Alta (utilizar contadores).
+III.	Tener en cuenta que no se podrá ingresar a los casos Modificar, Baja y	 Listar; sin antes haber realizado al menos un Alta (utilizar contadores).
 IV.	El código deberá tener comentarios con la documentación de cada una de las funciones y respetar las reglas de estilo de la cátedra.
+
+ strcmp(list[j].lastName, list[i].lastName) > 0 ascendente
+strcmp(list[j].lastName, list[i].lastName) <0 descendente

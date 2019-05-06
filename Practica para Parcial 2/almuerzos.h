@@ -17,3 +17,7 @@ int addLunch(eEmployee listE[],int lenE,eMenues listM[],int lenM,eAlmuerzos list
 int menuLunches ( );
 
 void showLunch(eAlmuerzos listAlm,int lenAlm,eMenues listMen[],int lenMen,eEmployee listEmp[],int lenEmp);
+
+void showLunches(eAlmuerzos listAlm[],int lenAlm,eMenues listMen[],int lenMen,eEmployee listEmp[],int lenEmp);
+
+void hardcodeoAlmuerzos(eAlmuerzos* list);

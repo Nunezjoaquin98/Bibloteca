@@ -62,7 +62,7 @@ int findEmployeeById(eEmployee list[], int len, int id)
 
 void showEmployees(eEmployee list[],int len,eSector listSec[],int lenSector)
 {
-    printf("\n\nLEGAJO\tNOMBRE\tAPELLIDO\tSEXO\tSALARIO\tSECTOR\tFECHA DE\n");
+    printf("\n\nLEGAJO\tAPELLIDO\tNOMBRE\tSEXO\tSALARIO\tSECTOR\tFECHA DE\n");
     printf("      \t      \t        \t    \t       \t      \tINGRESO\n");
 
     for(int i=0; i<len; i++)
@@ -371,7 +371,7 @@ void hardcodeoEmpleados(eEmployee* list)
     eEmployee empleados[]=
     {
         {1,"Riquelme","Juan","Masculino",20000,0,{12,05,2001},{1,"Recursos Humanos"}},
-        {2,"Andrada","Sebastian","Masculino",18500,0,{05,05,2019},{3,"Ventas"}},
+        {2,"Andrada","Sebas","Masculino",18500,0,{05,05,2019},{3,"Ventas"}},
         {3,"Sotto","Rocio","Femenino",12500,0,{03,05,2018},{4,"Administracion"}},
         {4,"Perez","Sol","Femenino",50000,0,{20,06,2005},{5,"Legales"}},
         {5,"Nunez","Diego","Masculino",34000,0,{18,02,2019},{1,"Recursos Humanos"}},
@@ -391,45 +391,51 @@ int removeEmployee(eEmployee list[], int len,int id,eSector listSec[],int lenSec
 
     if(list != NULL && len > 0)
     {
-        system("cls");
-        printf("\t\t  ***Baja de Empleado***\n");
-        showEmployees(list,len,listSec,lenSec);
-        while(!function_getStringNumeros("\nIngrese el legajo del empleado a borrar: ",auxId))
+        do
         {
-            printf("***Error*** Debe ingresar un numero.\n");
-            system("pause");
-        }
-        id = atoi(auxId);
-        index = findEmployeeById(list, len, id);
-        if( index == -1)
-        {
-            printf("No hay ningun empleado con legajo %d.\n\n", id);
-            system("pause");
-        }
-        else
-        {
-            showEmployee(list[index],listSec,lenSec);
-
-            while(!function_getStringNumeros("\nEs este el empleado/a que desea borrar?\nIngrese 1 si es correcto / Otro numero si es incorrecto: ",auxYes))
+            system("cls");
+            printf("\t\t  ***Baja de Empleado***\n");
+            showEmployees(list,len,listSec,lenSec);
+            while(!function_getStringNumeros("\nIngrese el legajo del empleado a borrar: ",auxId))
             {
                 printf("***Error*** Debe ingresar un numero.\n");
                 system("pause");
             }
-            yes = atoi(auxYes);
-            if(yes == 1)
+            id = atoi(auxId);
+            index = findEmployeeById(list, len, id);
+            if( index == -1)
             {
-                system("cls");
-                printf("El empleado/a ha sido borrado con exito!\n");
+                printf("No hay ningun empleado con legajo %d.\n\n", id);
                 system("pause");
-                list[index].isEmpty = 1 ;
             }
             else
             {
-                printf("Baja cancelada.\n");
-                system("pause");
+                showEmployee(list[index],listSec,lenSec);
+
+                while(!function_getStringNumeros("\nEs este el empleado/a que desea borrar?\nIngrese 1 si es correcto / Otro numero si es incorrecto: ",auxYes))
+                {
+                    printf("***Error*** Debe ingresar un numero.\n");
+                    system("pause");
+                }
+                yes = atoi(auxYes);
+                if(yes == 1)
+                {
+                    system("cls");
+                    printf("El empleado/a ha sido borrado con exito!\n");
+                    system("pause");
+                    list[index].isEmpty = 1 ;
+                }
+                else
+                {
+                    printf("Baja cancelada.\n");
+                    system("pause");
+                }
+
             }
 
+
         }
+        while(index == -1);
 
     }
     else
@@ -439,176 +445,94 @@ int removeEmployee(eEmployee list[], int len,int id,eSector listSec[],int lenSec
 
     return ret;
 }
-/*
+
 int sortEmployees(eEmployee list[], int len)
 {
     eEmployee auxEmployee;
-    char auxOrder[1] ;
-    int ret,order;
-
+    int ret;
 
     if(list != NULL && len > 0)
     {
-        while(!function_getStringNumeros("\n Ingrese 1 para ordenar de manera ascendente o ingrese 2 para ordenar de manera descendente: ",auxOrder))
+        for(int i = 0; i < len -1; i++)
         {
-            printf("*** ERROR DEBE INGRESAR UN NUMERO ***");
+            for(int j=i+1; j<len; j++)
+            {
+                if(strcmp(list[i].lastName,list[j].lastName) > 0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                {
+                    auxEmployee = list[i];
+                    list[i] = list[j];
+                    list[j] = auxEmployee ;
+                }else if(strcmp(list[i].lastName,list[j].lastName) == 0 && strcmp(list[i].name,list[j].name)>0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                {
+                          auxEmployee = list[i];
+                    list[i] = list[j];
+                    list[j] = auxEmployee ;
+                }
 
-        }
-        order = atoi(auxOrder);
-        switch(order)
-        {
-        case 1:
-            for(int i = 0; i < len - 1; i++)
-            {
-                for(int j = i + 1; j < len; j++)
-                {
-                    if(strcmp(list[j].lastName, list[i].lastName) < 0  && list[j].isEmpty == 0 && list[i].isEmpty == 0)
-                    {
-                        auxEmployee = list[i];
-                        list[i] = list[j];
-                        list[j] = auxEmployee;
-                    }
-                    else if(strcmp(list[j].lastName, list[i].lastName) == 0 && list[j].sector < list[i].sector  && list[j].isEmpty == 0 && list[i].isEmpty == 0)
-                    {
-                        auxEmployee = list[i];
-                        list[i] = list[j];
-                        list[j] = auxEmployee;
-                    }
-                }
-            }
-            printf("\n\nEl ordenado ascendente se ha realizado con exito.\n");
-            system("pause") ;
-            system("cls") ;
-            break;
-        case 2:
-            for(int i = 0; i < len-1; i++)
-            {
-                for(int j = i+1; j < len; j++)
-                {
-                    if(strcmp(list[j].lastName, list[i].lastName) > 0 && list[j].isEmpty == 0 && list[i].isEmpty == 0)
-                    {
-                        auxEmployee = list[i];
-                        list[i] = list[j];
-                        list[j] = auxEmployee;
-                    }
-                    else if(strcmp(list[j].lastName, list[i].lastName) == 0 && list[j].sector > list[i].sector  && list[j].isEmpty == 0 && list[i].isEmpty == 0)
-                    {
-                        auxEmployee = list[i];
-                        list[i] = list[j];
-                        list[j] = auxEmployee;
-                    }
-                }
             }
 
-            system("pause") ;
-            system("cls") ;
-            break;
-        default:
-            printf("No ingreso 1 o 2");
+            ret = 1;
+
         }
-
-    }
-    else
-    {
-        ret = -1;
-    }
-
-
-    return ret;
-
-}
-
-void function_averageSalary (eEmployee list[],int len)
-{
-    float acum,promedio,contador;
-    int contEmplSuperan;
-
-    for(int i = 0; i < len; i++)
-    {
-        if(list[i].isEmpty == 0)
+    }else
         {
-            acum = acum + list[i].salary;
-            contador++;
+            ret = -1;
         }
+
+
+        return ret;
+
     }
 
-    promedio = funcion_dividir(acum,contador);
-
-    for(int i = 0; i < len; i++)
+    void function_averageSalary (eEmployee list[],int len)
     {
-        if(list[i].isEmpty == 0 && list[i].salary > promedio)
-        {
-            contEmplSuperan++;
-        }
-    }
+        float acum,promedio,contador;
+        int contEmplSuperan;
 
-    printf("\nEl total de todos los salarios es de: %.2f \nEl promedio de los salarios es: %.2f \nLa cantidad de empleados que superan el promedio es de: %d\n\n",acum,promedio,contEmplSuperan);
-
-}
-*/
-int hayEmpleadoCargado (eEmployee list[],int len)
-{
-    int ret = 0;
-
-    if(list != NULL && len > 0)
-    {
         for(int i = 0; i < len; i++)
         {
             if(list[i].isEmpty == 0)
             {
-                ret = 1;
-                break;
+                acum = acum + list[i].salary;
+                contador++;
             }
         }
 
+        promedio = funcion_dividir(acum,contador);
 
-    }
-    else
-    {
-        ret = -1;
-    }
-
-    return ret;
-}
-
-int obtenerApellido(eEmployee list[], int len, int idE, char apellido[])
-{
-
-    int ret = 0;
-
-
-    for(int i=0; i < len; i++)
-    {
-
-        if(idE == list[i].legajo)
+        for(int i = 0; i < len; i++)
         {
-
-            strcpy(apellido, list[i].lastName);
-            ret = 1;
-            break;
+            if(list[i].isEmpty == 0 && list[i].salary > promedio)
+            {
+                contEmplSuperan++;
+            }
         }
+
+        printf("\nEl total de todos los salarios es de: %.2f \nEl promedio de los salarios es: %.2f \nLa cantidad de empleados que superan el promedio es de: %d\n\n",acum,promedio,contEmplSuperan);
+
     }
 
-    return ret;
-}
-
-int obtenerNombre(eEmployee list[], int len, int idE, char nombre[])
-{
-
-    int ret = 0;
-
-    for(int i=0; i < len; i++)
+    int hayEmpleadoCargado (eEmployee list[],int len)
     {
+        int ret = 0;
 
-        if(idE == list[i].legajo)
+        if(list != NULL && len > 0)
         {
+            for(int i = 0; i < len; i++)
+            {
+                if(list[i].isEmpty == 0)
+                {
+                    ret = 1;
+                    break;
+                }
+            }
 
-            strcpy(nombre, list[i].name);
-            ret = 1;
-            break;
+
         }
+        else
+        {
+            ret = -1;
+        }
+
+        return ret;
     }
-
-    return ret;
-}
-
