@@ -571,4 +571,44 @@ int hayEmpleadoCargado (eEmployee list[],int len)
     return ret;
 }
 
+int obtenerApellido(eEmployee list[], int len, int idE, char apellido[])
+{
+
+    int ret = 0;
+
+
+    for(int i=0; i < len; i++)
+    {
+
+        if(idE == list[i].legajo)
+        {
+
+            strcpy(apellido, list[i].lastName);
+            ret = 1;
+            break;
+        }
+    }
+
+    return ret;
+}
+
+int obtenerNombre(eEmployee list[], int len, int idE, char nombre[])
+{
+
+    int ret = 0;
+
+    for(int i=0; i < len; i++)
+    {
+
+        if(idE == list[i].legajo)
+        {
+
+            strcpy(nombre, list[i].name);
+            ret = 1;
+            break;
+        }
+    }
+
+    return ret;
+}
 

@@ -5,16 +5,20 @@
 #include "Fecha.h"
 #include "ArraysEmployees.h"
 #include "menues.h"
-#define SIZE 1000
+#include "almuerzos.h"
+#define SIZE 100
+#define SIZEALMUERZO 20
 
 
 int main()
 {
     char salir = 'n';
-    eEmployee empleados[SIZE]; // se crea un arrays tipo eEmployee con el tamaño de 1000
+    eEmployee empleados[SIZE];// se crea un arrays tipo eEmployee con el tamaño de 1000
     eSector sectores[6];
     eMenues comidas[6];
+    eAlmuerzos alm[SIZEALMUERZO];
     initEmployees(empleados,SIZE); // Se inicializa todos los empleados en 1.
+    initLunch(alm,SIZEALMUERZO);//se inicializa a todos los almuerzos.
     hardcodeoEmpleados(empleados);
     hardcodeoSectores(sectores);
     hardcodeoMenues(comidas);
@@ -26,7 +30,7 @@ int main()
             switch(menuDeLosMenues())
             {
             case 4:
-                mostrarMenues(comidas,5);
+                showMenues(comidas,5);
                 printf("\n\n");
                 system("pause");
                 break;
@@ -82,6 +86,23 @@ int main()
                     system("pause");
                     system("cls");
                 }
+                break;
+            }
+            break;
+        case 3:
+            switch(menuLunches())
+            {
+            case 1:
+                addLunch(empleados,SIZE,comidas,5,alm,SIZEALMUERZO,sectores,5);
+                break;
+            case 2:
+
+                system("pause");
+                break;
+            default:
+                printf("*** ERROR *** Debe ingresar un numero del 1 al 5\n\n") ; // el default se utiliza por si se ingresa un numero que no sea del 1 al 5
+                system("pause");
+                system("cls");
                 break;
             }
             break;

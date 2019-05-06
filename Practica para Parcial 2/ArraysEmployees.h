@@ -103,3 +103,6 @@ void function_averageSalary (eEmployee list[],int len);
 
 int hayEmpleadoCargado (eEmployee list[],int len);
 
+int obtenerApellido(eEmployee list[], int len, int idE, char apellido[]);
+
+int obtenerNombre(eEmployee list[], int len, int idE, char nombre[]);

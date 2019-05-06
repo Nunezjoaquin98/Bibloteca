@@ -47,9 +47,17 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sectores.h" />
+		<Unit filename="almuerzos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="almuerzos.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menues.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menues.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
