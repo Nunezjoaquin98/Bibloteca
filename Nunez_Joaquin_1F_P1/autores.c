@@ -8,11 +8,11 @@ void hardcodeoAutores(eAutores* list)
 {
     eAutores nuevosAutores[] =
     {
-        {1,"Neruda","Pablo",0},
-        {2,"Ysy","Alejo",0},
+        {1,"Neruda  ","Pablo",0},
+        {2,"Ysy     ","Alejo",0},
         {3,"Lombardo","Mauro",0},
-        {4,"Krupo","Matias",0},
-        {5,"Figo","Lorena",0},
+        {4,"Krupo   ","Matias",0},
+        {5,"Figo    ","Lorena",0},
     };
     for(int i = 0; i< 5; i++)
     {
@@ -29,7 +29,7 @@ void showAutor(eAutores list)
 
 void showAutores(eAutores list[],int len)
 {
-    printf("\n\nCODIGO\tAPELLIDO   NOMBRE\n");
+    printf("\n\nCODIGO\tAPELLIDO        NOMBRE\n");
 
     for(int i=0; i<len; i++)
     {

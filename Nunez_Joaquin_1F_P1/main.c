@@ -4,9 +4,11 @@
 #include "funciones.h"
 #include "fecha.h"
 #include "autores.h"
+#include "libros.h"
 #include "socios.h"
 #define tamSocios 100
 #define tamAutores 5
+#define tamLibros 5
 
 int main()
 {
@@ -14,11 +16,13 @@ int main()
     char salir = 'n';
     eSocios sociosBiblioteca[tamSocios]; // se define al tipo eSocios el tamanio con el tamSocios
     eAutores escritores[tamAutores];
+    eLibro exitos[tamLibros];
 
 
     initSocios(sociosBiblioteca,tamSocios); //se inicializa todos los isEmpty en 1 indicando que estan vacios
     hardcodeoSocios(sociosBiblioteca);
     hardcodeoAutores(escritores);
+    hardcodeoLibros(exitos);
 
 
     do
@@ -70,12 +74,23 @@ int main()
                 system("cls");
             }
             break;
+        case 5:
+            showLibros(exitos,tamLibros,escritores,tamAutores);
+            printf("\n\n");
+            system("pause");
+            break;
+
         case 6:
             showAutores(escritores,tamAutores);
             printf("\n\n");
             system("pause");
             break;
+        default:
 
+            printf("*** ERROR *** Debe ingresar un numero del 1 al 8\n\n") ; // el default se utiliza por si se ingresa un numero que no sea del 1 al 8
+            system("pause");
+            system("cls");
+            break;
 
         }
 

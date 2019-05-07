@@ -16,13 +16,14 @@
 	<string.h>
 	"funciones.h"
 
-1557186332 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\main.c
+1557188718 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones.h"
 	"fecha.h"
 	"autores.h"
+	"libros.h"
 	"socios.h"
 
 1557185357 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\socios.c
@@ -43,12 +44,12 @@
 
 1557188004 c:\users\alumno\desktop\nunez_joaquin_1f_p1\autores.h
 
-1557188087 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.c
+1557188899 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"autores.h"
 	"libros.h"
 
-1557187633 c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.h
+1557188730 c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.h
 

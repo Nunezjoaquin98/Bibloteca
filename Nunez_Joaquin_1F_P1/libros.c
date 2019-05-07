@@ -22,8 +22,8 @@ void showLibro(eLibro list,eAutores listAutor[],int lenAutor)
 
 void showLibros(eLibro list[],int len,eAutores listAutor[],int lenAutor)
 {
-    printf("\n\nCODIGO\tTITULO\tAPELLIDO    NOMBRE\n");
-    printf("      \t      \tDEL AUTOR   DEL AUTOR\n\n");
+    printf("\n\nCODIGO\tTITULO          APELLIDO    NOMBRE\n");
+    printf("      \t                DEL AUTOR   DEL AUTOR\n\n");
 
     for(int i=0; i<len; i++)
     {
@@ -41,11 +41,11 @@ void hardcodeoLibros(eLibro* list)
 {
     eLibro nuevosLibros[] =
     {
-        {1,"Volar",{1,"Neruda","Pablo",0},0},
-        {2,"Saltar",{4,"Krupo","Matias",0},0},
-        {3,"Biografia",{3,"Lombardo","Mauro",0},0},
-        {4,"Programacion",{1,"Neruda","Pablo",0},0},
-        {5,"Trap",{2,"Ysy","Alejo",0},0},
+        {1,"Volar       ",{1,"Neruda  ","Pablo",0},0},
+        {2,"Saltar      ",{4,"Krupo   ","Matias",0},0},
+        {3,"Biografia   ",{3,"Lombardo","Mauro",0},0},
+        {4,"Programacion",{1,"Neruda  ","Pablo",0},0},
+        {5,"Trap        ",{2,"Ysy     ","Alejo",0},0},
 
     };
     for(int i = 0; i< 5; i++)
