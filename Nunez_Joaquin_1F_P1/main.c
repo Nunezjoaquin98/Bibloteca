@@ -6,17 +6,21 @@
 #include "autores.h"
 #include "libros.h"
 #include "socios.h"
+#include "prestamos.h"
 #define tamSocios 100
 #define tamAutores 5
 #define tamLibros 5
+#define tamPrestamos 20
 
 int main()
 {
     //declaro variables
     char salir = 'n';
+    char salirPrestamo = 'n';
     eSocios sociosBiblioteca[tamSocios]; // se define al tipo eSocios el tamanio con el tamSocios
     eAutores escritores[tamAutores];
     eLibro exitos[tamLibros];
+    ePrestamos prestamos[tamPrestamos];
 
 
     initSocios(sociosBiblioteca,tamSocios); //se inicializa todos los isEmpty en 1 indicando que estan vacios
@@ -85,8 +89,26 @@ int main()
             printf("\n\n");
             system("pause");
             break;
-        default:
+        case 7:
+            do
+            {
+                switch()
+                {
+                case 1:
+                    addPrestamo(sociosBiblioteca,tamSocios,exitos,tamLibros,prestamos,tamPrestamos,escritores,tamAutores);
+                    printf("\n\n");
+                    system("pause");
+                    break;
+                }
+            }
+            while(salirPrestamo == 'n');
 
+        case 8:
+            printf("\n\nSaliendo...\n");
+            system("pause");
+            salir = 's';
+            break;
+        default:
             printf("*** ERROR *** Debe ingresar un numero del 1 al 8\n\n") ; // el default se utiliza por si se ingresa un numero que no sea del 1 al 8
             system("pause");
             system("cls");

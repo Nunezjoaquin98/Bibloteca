@@ -53,3 +53,70 @@
 
 1557188730 c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.h
 
+1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+
+1557190638 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\autores.h
+
+1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"fecha.h"
+
+1557190638 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\funciones.h
+
+1557190638 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\fecha.h
+
+1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+	"libros.h"
+
+1557239212 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\libros.h
+
+1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"fecha.h"
+	"autores.h"
+	"libros.h"
+	"socios.h"
+
+1557190638 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\socios.h
+
+1557240671 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"fecha.h"
+	"autores.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557240793 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\prestamos.h
+
+1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"funciones.h"
+	"socios.h"
+

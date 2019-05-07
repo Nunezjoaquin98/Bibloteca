@@ -95,9 +95,9 @@ int addPrestamo(eSocios listSocios[],int tamSoc,eLibro listLibros[],int tamLibro
                 {
                     system("cls");
                     printf("\n\nEl libro seleccionado es:\n");
-                    printf("\CODIGO\tTITULO          APELLIDO    NOMBRE\n");
+                    printf("\nCODIGO\tTITULO          APELLIDO    NOMBRE\n");
                     printf("      \t                DEL AUTOR   DEL AUTOR\n\n");
-                    showLibro(listLibros[indexLibros],tamLibro);
+                    showLibro(listLibros[indexLibros],listAut,tamAuto);
                 }
 
             }
@@ -110,10 +110,10 @@ int addPrestamo(eSocios listSocios[],int tamSoc,eLibro listLibros[],int tamLibro
             {
                 while(!function_getStringNumeros("\nIngrese el numero de codigo del socio/a: ",auxSocioCod))
                 {
-                    printf("\nError el legajo debe tener solo numeros.\n\n");
+                    printf("\nError el codigo debe tener solo numeros.\n\n");
                     system("pause");
                 }
-                indexSocios = findEmployeeById(listSocios,tamSoc,atoi(auxSocioCod));
+                indexSocios = findSocioById(listSocios,tamSoc,atoi(auxSocioCod));
                 if(indexSocios == -1)
                 {
                     printf("\n***ERROR*** Codigo incorrecto\n");
@@ -134,16 +134,17 @@ int addPrestamo(eSocios listSocios[],int tamSoc,eLibro listLibros[],int tamLibro
             ingresarMes(mes);
             ingresarAnio(anio);
 
-            //se copian todos los datos al nuevo almuerzo
+            //se copian todos los datos al nuevo PRESTAMO
             newPrestamo.codigoDePrestamo = index;
-            newPrestamo.codigoLib.codigoDelLibro = listLibros[indexLibros];
-            newPrestamo.codigoSoc.codigoDeSocio = listSocios[indexSocios];
+            newPrestamo.codigoLib = listLibros[indexLibros];
+            newPrestamo.codigoSoc = listSocios[indexSocios];
             newPrestamo.fechaDePrestamo.dia = atoi(dia);
             newPrestamo.fechaDePrestamo.mes = atoi(mes);
             newPrestamo.fechaDePrestamo.anio = atoi(anio);
             newPrestamo.isEmpty = 0;
             listPrest[index] = newPrestamo;
             system("cls");
+            mostrarPrestamo(listPrest[index],tamPrest,listLibros,tamLibro,listSocios,tamSoc);
             //showLunch(listPrest[index],tamPrest,listLibros,tamLibro,listSocios,tamSoc);
             printf("\n\n");
             system("pause");
@@ -155,4 +156,43 @@ int addPrestamo(eSocios listSocios[],int tamSoc,eLibro listLibros[],int tamLibro
         ret = -1 ;
     }
     return ret;
+}
+
+void mostrarPrestamo(ePrestamos listPrest,int lenPrest,eLibro listLibros[],int lenLibros,eSocios listSocios[],int lenSocios)
+{
+    int indexLibro,indexSocio;
+
+    printf("\t\t-PRESTAMO-\nCodigo del prestamo: %d\nFecha del prestamo: %d/%d/%d\n",listPrest.codigoDePrestamo,listPrest.fechaDePrestamo.dia,listPrest.fechaDePrestamo.mes,listPrest.fechaDePrestamo.anio);
+
+    indexLibro = findLibroById(listLibros,lenLibros,listPrest.codigoLib.codigoDelLibro); // se busca la posicion del libro
+    printf("\t\t Libro \nTitulo: %s\nAutor: %s %s",listLibros[indexLibro].titulo,listLibros[indexLibro].codigoDeAutor.apellido,listLibros[indexLibro].codigoDeAutor.nombre);
+
+    indexSocio = findSocioById(listSocios,lenSocios,listPrest.codigoSoc.isEmpty);
+    printf("\t\t Socio \nApellido y nombre: %s %s\nCodigo de socio: %d",listSocios[indexSocio].apellido,listSocios[indexSocio].nombre,listSocios[indexSocio].codigoDeSocio);
+
+}
+
+
+int menuPrestamos()
+{
+    char auxOption[2];
+    int option;
+    system("cls") ;
+    printf("\n\t\t*** MENU PRESTAMOS ***\n\n");
+    printf("1-ALTAS \n");
+    printf("2-LISTAR \n\n") ;
+    printf("3-BAJAS \n");
+    printf("4-LISTAR SOCIOS \n");
+    printf("5-LISTAR LIBROS \n");
+    printf("6-LISTAR AUTORES \n");
+    printf("4-LISTAR PRESTAMOS \n\n");
+    printf("8-VOLVER AL MENU PRINCIPAL\n\n") ;
+    while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
+    {
+        printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;
+        system("pause") ;
+
+    }
+    option = atoi(auxOption) ;
+    return option;
 }
