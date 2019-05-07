@@ -35,13 +35,20 @@
 
 1557184661 c:\users\alumno\desktop\nunez_joaquin_1f_p1\socios.h
 
-1557186206 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\autores.c
+1557188270 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\autores.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"autores.h"
 
-1557186366 c:\users\alumno\desktop\nunez_joaquin_1f_p1\autores.h
+1557188004 c:\users\alumno\desktop\nunez_joaquin_1f_p1\autores.h
 
-1557185463 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.c
+1557188087 source:c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+	"libros.h"
+
+1557187633 c:\users\alumno\desktop\nunez_joaquin_1f_p1\libros.h
 

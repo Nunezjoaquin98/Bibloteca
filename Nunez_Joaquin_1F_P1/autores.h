@@ -13,3 +13,5 @@ void showAutor(eAutores list);
 
 void showAutores(eAutores list[],int len);
 
+int obtenerAutor(eAutores list[], int len, int idAutor, char apellido[],char nombre[]);
+

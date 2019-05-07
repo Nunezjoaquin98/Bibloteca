@@ -40,3 +40,23 @@ void showAutores(eAutores list[],int len)
     }
 
 }
+
+int obtenerAutor(eAutores list[], int len, int idAutor, char apellido[],char nombre[])
+{
+
+    int ret = 0;
+
+    for(int i=0; i < len; i++)    {
+
+        if(idAutor == list[i].codigoDeAutor)
+        {
+
+            strcpy(apellido, list[i].apellido);
+            strcpy(nombre, list[i].nombre);
+            ret = 1;
+            break;
+        }
+    }
+
+    return ret;
+}
