@@ -203,3 +203,20 @@ int menuPrestamos()
     option = atoi(auxOption) ;
     return option;
 }
+
+
+void hardcodeoPrestamos(ePrestamos* list)
+{
+    ePrestamos nuevosPrestamos[] =
+    {
+        {1,{1,"Volar       ",{1,"Neruda  ","Pablo",0},0},{4,"Joaquin","Nuñez","Masculino",1136823123,"joaconunez@gmail.com",{16,04,2019},0},{07,05,2019},0},
+        {2,{3,"Biografia   ",{3,"Lombardo","Mauro",0},0},{2,"Palermo","Martin","Masculino",1135849813,"martin9@gmail.com",{12,12,2012},0},{01,05,2019},0},
+        {3,{3,"Biografia   ",{3,"Lombardo","Mauro",0},0},{5,"Rosa","Duki","Femenino",1112345896,"rositaduko@gmail.com",{02,07,2019},0},{28,04,2019},0},
+        {4,{2,"Saltar      ",{4,"Krupo   ","Matias",0},0},{4,"Joaquin","Nuñez","Masculino",1136823123,"joaconunez@gmail.com",{16,04,2019},0},{02,05,2018},0},
+        {5,{5,"Trap        ",{2,"Ysy     ","Alejo",0},0},{2,"Palermo","Martin","Masculino",1135849813,"martin9@gmail.com",{12,12,2012},0},{10,10,2010},0},
+    };
+    for(int i = 0; i< 5; i++)
+    {
+        list[i] = nuevosPrestamos[i];
+    }
+}

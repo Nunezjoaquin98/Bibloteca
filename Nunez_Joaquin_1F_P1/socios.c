@@ -535,8 +535,9 @@ int menuSocios ( )
     printf("4-LISTAR SOCIOS \n");
     printf("5-LISTAR LIBROS \n");
     printf("6-LISTAR AUTORES \n");
-    printf("7-PRESTAMOS \n\n");
-    printf("8-SALIR\n\n") ;
+    printf("7-PRESTAMOS\n");
+    printf("8-INFORMES\n\n") ;
+    printf("9-SALIR\n\n") ;
     while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
     {
         printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;

@@ -7,6 +7,7 @@
 #include "libros.h"
 #include "socios.h"
 #include "prestamos.h"
+#include "informes.h"
 #define tamSocios 100
 #define tamAutores 5
 #define tamLibros 5
@@ -17,6 +18,7 @@ int main()
     //declaro variables
     char salir = 'n';
     char salirPrestamo = 'n';
+    char salirInformes = 'n';
     eSocios sociosBiblioteca[tamSocios]; // se define al tipo eSocios el tamanio con el tamSocios
     eAutores escritores[tamAutores];
     eLibro exitos[tamLibros];
@@ -28,7 +30,7 @@ int main()
     hardcodeoSocios(sociosBiblioteca);
     hardcodeoAutores(escritores);
     hardcodeoLibros(exitos);
-
+    hardcodeoPrestamos(prestamos);
 
     do
     {
@@ -79,18 +81,18 @@ int main()
                 system("cls");
             }
             break;
-        case 5:
+        case 5: //LISTAR LIBROS
             showLibros(exitos,tamLibros,escritores,tamAutores);
             printf("\n\n");
             system("pause");
             break;
 
-        case 6:
+        case 6: //LISTAR AUTORES
             showAutores(escritores,tamAutores);
             printf("\n\n");
             system("pause");
             break;
-        case 7:
+        case 7: // PRESTAMOS
             do
             {
                 switch(menuPrestamos())
@@ -115,7 +117,42 @@ int main()
             }
             while(salirPrestamo == 'n');
             break;
-        case 8:
+        case 8: // INFORMES
+            do
+            {
+                switch(menuInformes())
+                {
+                case 3:
+                    listarSociosDeLibro(exitos,tamLibros,sociosBiblioteca,tamSocios,escritores,tamAutores,prestamos,tamPrestamos);
+                    printf("\n");
+                    system("pause");
+                    break;
+                case 4:
+                    listarLibrosDeSocio(exitos,tamLibros,sociosBiblioteca,tamSocios,escritores,tamAutores,prestamos,tamPrestamos);
+                    printf("\n");
+                    system("pause");
+                    break;
+                case 9:
+                    listarLibrosPorTituloBurbujeo(exitos,tamLibros);
+                    showLibros(exitos,tamLibros,escritores,tamAutores);
+                    printf("\n");
+                    system("pause");
+                    break;
+                case 11:
+                    printf("\n\nVolviendo...\n");
+                    system("pause");
+                    salirInformes = 's';
+                    break;
+                default:
+                    printf("*** ERROR ***\n\n") ; // el default se utiliza por si se ingresa un numero que no sea del 1 al 8
+                    system("pause");
+                    system("cls");
+                    break;
+                }
+            }
+            while(salirInformes == 'n');
+            break;
+        case 9:
             printf("\n\nSaliendo...\n");
             system("pause");
             salir = 's';
