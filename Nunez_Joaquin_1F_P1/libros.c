@@ -35,8 +35,6 @@ void showLibros(eLibro list[],int len,eAutores listAutor[],int lenAutor)
 }
 
 
-
-
 void hardcodeoLibros(eLibro* list)
 {
     eLibro nuevosLibros[] =
@@ -52,4 +50,20 @@ void hardcodeoLibros(eLibro* list)
     {
         list[i] = nuevosLibros[i];
     }
+}
+
+int findLibroById(eLibro list[], int len, int id)
+{
+
+    for(int i=0; i < len; i++)
+    {
+
+        if( list[i].codigoDelLibro == id)
+        {
+            return i;
+            break;
+        }
+    }
+    return -1;
+
 }
