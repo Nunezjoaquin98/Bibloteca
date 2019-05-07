@@ -33,7 +33,7 @@ int iniciarPrestamo(ePrestamos list[], int len)
 int searchEmptyPrestamo(ePrestamos list[],int len)
 {
     int index = -1;
-    for(int i=0; i<len ; i++)
+    for(int i=1; i<len ; i++)
     {
         if( list[i].isEmpty == 1)
         {
@@ -71,10 +71,8 @@ int addPrestamo(eSocios listSocios[],int tamSoc,eLibro listLibros[],int tamLibro
         else
         {
 
-            index++; // se suma uno asi el primer prestamo no tiene id "0"
+
             printf("\nNuevo prestamo, CODIGO numero %d. \n\n",index) ;
-
-
 
             // SE LE HACE SELECCIONAR UN LIBRO AL USUARIO
             do
@@ -145,9 +143,8 @@ int addPrestamo(eSocios listSocios[],int tamSoc,eLibro listLibros[],int tamLibro
             listPrest[index] = newPrestamo;
             system("cls");
             mostrarPrestamo(listPrest[index],tamPrest,listLibros,tamLibro,listSocios,tamSoc);
-            //showLunch(listPrest[index],tamPrest,listLibros,tamLibro,listSocios,tamSoc);
             printf("\n\n");
-            system("pause");
+
 
         }
     }
@@ -180,8 +177,9 @@ void mostrarPrestamos(ePrestamos listPrest[],int lenPrest,eLibro listLibros[],in
 
         if(listPrest[i].isEmpty == 0)
         {
-            printf("_________________________________________");
+            printf("_________________________________________\n\n");
             mostrarPrestamo(listPrest[i],lenPrest,listLibros,lenLibros,listSocios,lenSocios);
+            printf("\n");
         }
     }
 
