@@ -87,19 +87,7 @@
 
 1557239212 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\libros.h
 
-1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"funciones.h"
-	"fecha.h"
-	"autores.h"
-	"libros.h"
-	"socios.h"
-
-1557190638 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\socios.h
-
-1557240671 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\prestamos.c
+1557255378 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -110,9 +98,22 @@
 	"socios.h"
 	"prestamos.h"
 
-1557240793 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\prestamos.h
+1557190638 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\socios.h
 
-1557190638 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\socios.c
+1557251426 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"fecha.h"
+	"autores.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557250716 c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\prestamos.h
+
+1557251630 source:c:\users\joaco\downloads\bibloteca-master\nunez_joaquin_1f_p1\socios.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

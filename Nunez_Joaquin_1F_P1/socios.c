@@ -7,7 +7,7 @@
 
 int initSocios(eSocios list[], int len)
 {
-    int ret = 0;
+   int ret = 0;
 
     if(list != NULL && len > 0)
     {
@@ -79,7 +79,7 @@ void showSocios(eSocios list[],int len)
 
 void showSocio(eSocios list)
 {
-    printf("\n%d\t  %s\t%s\t%s\t%d\t%s\t%d/%d/%d\n",list.codigoDeSocio,list.apellido,list.nombre,list.sexo,list.telefono,list.email,list.fechaDeInscipcion.dia,list.fechaDeInscipcion.mes,list.fechaDeInscipcion.anio);
+    printf("\n%d\t%s\t%s\t%s\t%d\t%s\t%d/%d/%d\n",list.codigoDeSocio,list.apellido,list.nombre,list.sexo,list.telefono,list.email,list.fechaDeInscipcion.dia,list.fechaDeInscipcion.mes,list.fechaDeInscipcion.anio);
 
 }
 
@@ -97,7 +97,7 @@ int addSocio(eSocios list[], int len)
     char auxDia[4];
     char auxMes[4];
     char auxAnio[5];
-
+    /*
     if(list != NULL && len > 0)
     {
         system("cls");
@@ -115,9 +115,9 @@ int addSocio(eSocios list[], int len)
         else
         {
 
-            index++; // se suma uno asi el primer socio no tiene codigo "0"
             printf("\nNuevo socio, codigo de socio numero %d. \n\n",index) ;
             newSocio.codigoDeSocio = index ;
+            fflush(stdin);
             while(!function_getStringLetras("Ingrese nombre: ",auxName)) //carga el nombre
             {
                 printf("El nombre solo debe tener letras.\n\n") ;
@@ -125,6 +125,7 @@ int addSocio(eSocios list[], int len)
                 system("cls");
 
             }
+
             while(!function_getStringLetras("\nIngrese apellido: ",auxLastName)) // carga el apellido
             {
                 printf("El apellido debe tener solo letras.\n\n") ;
@@ -173,13 +174,14 @@ int addSocio(eSocios list[], int len)
 
             strcpy(newSocio.nombre,auxName) ;
             strcpy(newSocio.apellido,auxLastName) ;
-            strcpy(newSocio.sexo,auxSex);
+            //strcpy(newSocio.sexo,auxSex);
             newSocio.telefono = atoi(auxTelefono) ;
             strcpy(newSocio.email,auxEmail);
             newSocio.fechaDeInscipcion.dia = atoi(auxDia);
             newSocio.fechaDeInscipcion.mes = atoi(auxMes);
             newSocio.fechaDeInscipcion.anio = atoi(auxAnio);
             newSocio.isEmpty = 0;
+            printf("\n\n la concha de tu tia= %d",newSocio.isEmpty);
             list[index] = newSocio ;
             system("pause");
             system("cls");
@@ -189,7 +191,7 @@ int addSocio(eSocios list[], int len)
             system("pause");
             ret = 0 ;
         }
-    }
+    } */
     else
     {
         ret = -1 ;
@@ -540,7 +542,7 @@ int menuSocios ( )
     printf("4-LISTAR SOCIOS \n");
     printf("5-LISTAR LIBROS \n");
     printf("6-LISTAR AUTORES \n");
-    printf("4-LISTAR PRESTAMOS \n\n");
+    printf("7-PRESTAMOS \n\n");
     printf("8-VOLVER AL MENU PRINCIPAL\n\n") ;
     while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
     {

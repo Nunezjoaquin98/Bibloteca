@@ -162,16 +162,30 @@ void mostrarPrestamo(ePrestamos listPrest,int lenPrest,eLibro listLibros[],int l
 {
     int indexLibro,indexSocio;
 
-    printf("\t\t-PRESTAMO-\nCodigo del prestamo: %d\nFecha del prestamo: %d/%d/%d\n",listPrest.codigoDePrestamo,listPrest.fechaDePrestamo.dia,listPrest.fechaDePrestamo.mes,listPrest.fechaDePrestamo.anio);
+    printf("\t\t-PRESTAMO-\n\nCodigo del prestamo: %d\nFecha del prestamo: %d/%d/%d\n\n",listPrest.codigoDePrestamo,listPrest.fechaDePrestamo.dia,listPrest.fechaDePrestamo.mes,listPrest.fechaDePrestamo.anio);
 
     indexLibro = findLibroById(listLibros,lenLibros,listPrest.codigoLib.codigoDelLibro); // se busca la posicion del libro
-    printf("\t\t Libro \nTitulo: %s\nAutor: %s %s",listLibros[indexLibro].titulo,listLibros[indexLibro].codigoDeAutor.apellido,listLibros[indexLibro].codigoDeAutor.nombre);
+    printf("\t\t Libro \nTitulo: %s\nAutor: %s %s\n\n",listLibros[indexLibro].titulo,listLibros[indexLibro].codigoDeAutor.apellido,listLibros[indexLibro].codigoDeAutor.nombre);
 
-    indexSocio = findSocioById(listSocios,lenSocios,listPrest.codigoSoc.isEmpty);
+    indexSocio = findSocioById(listSocios,lenSocios,listPrest.codigoSoc.codigoDeSocio);
     printf("\t\t Socio \nApellido y nombre: %s %s\nCodigo de socio: %d",listSocios[indexSocio].apellido,listSocios[indexSocio].nombre,listSocios[indexSocio].codigoDeSocio);
 
 }
 
+void mostrarPrestamos(ePrestamos listPrest[],int lenPrest,eLibro listLibros[],int lenLibros,eSocios listSocios[],int lenSocios)
+{
+
+    for(int i = 0; i < lenPrest; i++)
+    {
+
+        if(listPrest[i].isEmpty == 0)
+        {
+            printf("_________________________________________");
+            mostrarPrestamo(listPrest[i],lenPrest,listLibros,lenLibros,listSocios,lenSocios);
+        }
+    }
+
+}
 
 int menuPrestamos()
 {
@@ -181,15 +195,10 @@ int menuPrestamos()
     printf("\n\t\t*** MENU PRESTAMOS ***\n\n");
     printf("1-ALTAS \n");
     printf("2-LISTAR \n\n") ;
-    printf("3-BAJAS \n");
-    printf("4-LISTAR SOCIOS \n");
-    printf("5-LISTAR LIBROS \n");
-    printf("6-LISTAR AUTORES \n");
-    printf("4-LISTAR PRESTAMOS \n\n");
-    printf("8-VOLVER AL MENU PRINCIPAL\n\n") ;
+    printf("3-VOLVER AL MENU PRINCIPAL\n\n") ;
     while(!function_getStringNumeros("Ingresar opcion: ",auxOption))
     {
-        printf("\n*** ERROR *** Debe ingresar un numero del 1 al 5. \n") ;
+        printf("\n*** ERROR *** Debe ingresar un numero del 1 al 3. \n") ;
         system("pause") ;
 
     }

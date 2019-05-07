@@ -24,6 +24,7 @@ int main()
 
 
     initSocios(sociosBiblioteca,tamSocios); //se inicializa todos los isEmpty en 1 indicando que estan vacios
+    iniciarPrestamo(prestamos,tamPrestamos);
     hardcodeoSocios(sociosBiblioteca);
     hardcodeoAutores(escritores);
     hardcodeoLibros(exitos);
@@ -92,17 +93,28 @@ int main()
         case 7:
             do
             {
-                switch()
+                switch(menuPrestamos())
                 {
                 case 1:
                     addPrestamo(sociosBiblioteca,tamSocios,exitos,tamLibros,prestamos,tamPrestamos,escritores,tamAutores);
                     printf("\n\n");
                     system("pause");
                     break;
+                case 2:
+                    system("cls");
+                    mostrarPrestamos(prestamos,tamPrestamos,exitos,tamLibros,sociosBiblioteca,tamSocios);
+                    printf("\n\n");
+                    system("pause");
+                    break;
+                case 3:
+                    salirPrestamo = 's';
+                    printf("\n\nVolviendo al menu principal...\n\n");
+                    system("pause");
+                    break;
                 }
             }
             while(salirPrestamo == 'n');
-
+            break;
         case 8:
             printf("\n\nSaliendo...\n");
             system("pause");
