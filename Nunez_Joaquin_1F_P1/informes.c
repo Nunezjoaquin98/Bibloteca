@@ -255,3 +255,7 @@ void socioEnFechaDeterminada(ePrestamos listPrest[],int lenPres,eSocios listSoc[
 
 
 }
+
+
+
+
