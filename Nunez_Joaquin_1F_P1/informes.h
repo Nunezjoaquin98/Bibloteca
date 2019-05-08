@@ -12,3 +12,8 @@ int menuInformes();
 
 int listarLibrosPorTituloBurbujeo(eLibro list[], int len);
 
+ void listarSociosPorInsercion(eSocios list[], int size);
+
+ void libroEnFechaDeterminada(ePrestamos listPrest[],int lenPres,eLibro listLibro[],int lenLibro,eAutores listAu[],int lenAut);
+
+ void socioEnFechaDeterminada(ePrestamos listPrest[],int lenPres,eSocios listSoc[],int lenSoc);

@@ -31,7 +31,7 @@ void showLibros(eLibro list[],int len,eAutores listAutor[],int lenAutor)
         {
             showLibro(list[i],listAutor,lenAutor);
         }
-        }
+    }
 }
 
 
@@ -65,5 +65,39 @@ int findLibroById(eLibro list[], int len, int id)
         }
     }
     return -1;
+
+}
+
+int sortLibros(eLibro list[], int len)
+{
+    eLibro auxLibro;
+    int ret;
+
+    if(list != NULL && len > 0)
+    {
+        for(int i = 0; i < len -1; i++)
+        {
+            for(int j=i+1; j<len; j++)
+            {
+                if(strcmp(list[i].titulo,list[j].titulo) > 0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                {
+                    auxLibro = list[i];
+                    list[i] = list[j];
+                    list[j] = auxLibro ;
+                }
+
+            }
+
+            ret = 1;
+
+        }
+    }
+    else
+    {
+        ret = -1;
+    }
+
+
+    return ret;
 
 }

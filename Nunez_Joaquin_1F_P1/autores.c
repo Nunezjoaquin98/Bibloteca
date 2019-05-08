@@ -60,3 +60,44 @@ int obtenerAutor(eAutores list[], int len, int idAutor, char apellido[],char nom
 
     return ret;
 }
+
+
+int sortAutores(eAutores list[], int len)
+{
+    eAutores auxAutor;
+    int ret;
+
+    if(list != NULL && len > 0)
+    {
+        for(int i = 0; i < len -1; i++)
+        {
+            for(int j=i+1; j<len; j++)
+            {
+                if(strcmp(list[i].apellido,list[j].apellido) > 0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                {
+                    auxAutor = list[i];
+                    list[i] = list[j];
+                    list[j] = auxAutor ;
+                }
+                else if(strcmp(list[i].apellido,list[j].apellido) == 0 && strcmp(list[i].nombre,list[j].nombre)>0 && list[i].isEmpty == 0 && list[j].isEmpty == 0)
+                {
+                    auxAutor = list[i];
+                    list[i] = list[j];
+                    list[j] = auxAutor ;
+                }
+
+            }
+
+            ret = 1;
+
+        }
+    }
+    else
+    {
+        ret = -1;
+    }
+
+
+    return ret;
+
+}

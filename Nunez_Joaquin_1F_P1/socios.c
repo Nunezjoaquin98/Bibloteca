@@ -93,6 +93,7 @@ int addSocio(eSocios list[], int len)
     char auxLastName[31];
     char auxSex[10];
     char auxTelefono[10] ;
+    char auxEmail[31];
     char auxDia[4];
     char auxMes[4];
     char auxAnio[5];
@@ -102,7 +103,7 @@ int addSocio(eSocios list[], int len)
         system("cls");
         fflush(stdin);
         index = searchEmpty(list,len) ;
-        printf("\n\t------- Alta empleado -------\n\n");
+        printf("\n\t------- Alta socio -------\n\n");
 
         if(index == -1)
         {
@@ -114,8 +115,8 @@ int addSocio(eSocios list[], int len)
         else
         {
 
-            index++; // se suma uno asi el primer empleado no tiene id "0"
-            printf("\nNuevo empleado, LEGAJO numero %d. \n\n",index) ;
+            index++; // se suma uno asi el primer socio no tiene id "0"
+            printf("\nNuevo socio, codigo numero %d. \n\n",index) ;
             newSocio.codigoDeSocio = index ;
             while(!function_getStringLetras("Ingrese nombre: ",auxName))
             {
@@ -160,17 +161,23 @@ int addSocio(eSocios list[], int len)
                 system("cls");
 
             }
+            printf("\nIngrese el email del socio: ");
+            gets(auxEmail); // EMAIL
+
+
+
             //FECHA DE INGRESO
             printf("\n\tFECHA DE INGRESO\n");
             ingresarDia(auxDia);
             ingresarMes(auxMes);
             ingresarAnio(auxAnio);
-        // se copian todos los datos del nuevo empleado.
+        // se copian todos los datos del nuevo socio.
 
             strcpy(newSocio.nombre,auxName) ;
             strcpy(newSocio.apellido,auxLastName) ;
             strcpy(newSocio.sexo,auxSex);
             newSocio.telefono = atoi(auxTelefono) ;
+            strcpy(newSocio.email,auxEmail);
             newSocio.fechaDeInscipcion.dia = atoi(auxDia);
             newSocio.fechaDeInscipcion.mes = atoi(auxMes);
             newSocio.fechaDeInscipcion.anio = atoi(auxAnio);
@@ -178,7 +185,8 @@ int addSocio(eSocios list[], int len)
             list[index] = newSocio ;
             system("pause");
             system("cls");
-            printf("\n\nEMPLEADO DADO DE ALTA CON EXITO:\n\n");
+            printf("\n\nSOCIO DADO DE ALTA CON EXITO:\n\n");
+            printf("\n\nCODIGO\tAPELLIDO\tNOMBRE\tSEXO\t  TELEFONO\t\tEMAIL\t\t FECHA DE INGRESO\n");
             showSocio(list[index]);
             printf("\n\n\n");
             system("pause");
@@ -353,9 +361,9 @@ void hardcodeoSocios(eSocios* list)
     {
         {1,"Riquelme","Juan","Masculino",1136823896,"juanroman10@gmail.com",{12,05,2001},0},
         {2,"Palermo","Martin","Masculino",1135849813,"martin9@gmail.com",{12,12,2012},0},
-        {3,"Rocio","Gonzalez","Femenino",1174853197,"rogonzalez@gmail.com",{05,05,2019},0},
-        {4,"Joaquin","Nuñez","Masculino",1136823123,"joaconunez@gmail.com",{16,04,2019},0},
-        {5,"Rosa","Duki","Femenino",1112345896,"rositaduko@gmail.com",{02,07,2019},0},
+        {3,"Gonzalez","Rocio","Femenino",1174853197,"rogonzalez@gmail.com",{05,05,2019},0},
+        {4,"Nuñez","Joaquin","Masculino",1136823123,"joaconunez@gmail.com",{16,04,2019},0},
+        {5,"Duki","Rosa","Femenino",1112345896,"rositaduko@gmail.com",{02,07,2019},0},
     };
     for(int i = 0; i< 5; i++)
     {

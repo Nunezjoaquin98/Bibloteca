@@ -82,12 +82,14 @@ int main()
             }
             break;
         case 5: //LISTAR LIBROS
+            sortLibros(exitos,tamLibros);
             showLibros(exitos,tamLibros,escritores,tamAutores);
             printf("\n\n");
             system("pause");
             break;
 
         case 6: //LISTAR AUTORES
+            sortAutores(escritores,tamAutores);
             showAutores(escritores,tamAutores);
             printf("\n\n");
             system("pause");
@@ -132,9 +134,25 @@ int main()
                     printf("\n");
                     system("pause");
                     break;
+                case 7:
+                    libroEnFechaDeterminada(prestamos,tamPrestamos,exitos,tamLibros,escritores,tamAutores);
+                    printf("\n");
+                    system("pause");
+                    break;
+                case 8:
+                    socioEnFechaDeterminada(prestamos,tamPrestamos,sociosBiblioteca,tamSocios);
+                    printf("\n");
+                    system("pause");
+                    break;
                 case 9:
                     listarLibrosPorTituloBurbujeo(exitos,tamLibros);
                     showLibros(exitos,tamLibros,escritores,tamAutores);
+                    printf("\n");
+                    system("pause");
+                    break;
+                case 10:
+                    listarSociosPorInsercion(sociosBiblioteca,tamSocios);
+                    showSocios(sociosBiblioteca,tamSocios);
                     printf("\n");
                     system("pause");
                     break;
@@ -158,7 +176,7 @@ int main()
             salir = 's';
             break;
         default:
-            printf("*** ERROR *** Debe ingresar un numero del 1 al 8\n\n") ; // el default se utiliza por si se ingresa un numero que no sea del 1 al 8
+            printf("*** ERROR *** Debe ingresar un numero del 1 al 9\n\n") ; // el default se utiliza por si se ingresa un numero que no sea del 1 al 8
             system("pause");
             system("cls");
             break;
