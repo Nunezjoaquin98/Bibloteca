@@ -171,3 +171,9 @@ int menuDeLosMenues ( );
 
 void function_validName(char text[]);
 
+
+/** \brief Permite al usuario ingresar un texto y lo devuelve en un nuevo espacio de memoria.
+ * \param char* msg. Mensaje a ser impreso
+ * \return Puntero a cadena de caracteres con texto ingresado. Se debe liberar con free().
+ */
+char* getDynamicString(char* msg) ;
