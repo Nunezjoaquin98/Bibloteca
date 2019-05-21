@@ -81,6 +81,26 @@ char function_getChar(char msj[])
     return aux;
 }
 
+int esNumericoFlotante(char str[])
+{
+   int i=0;
+   int cantidadPuntos=0;
+   while(str[i] != '\0')
+   {
+       if (str[i] == '.' && cantidadPuntos == 0)
+       {
+           cantidadPuntos++;
+           i++;
+           continue;
+
+       }
+       if(str[i] < '0' || str[i] > '9')
+           return 0;
+       i++;
+   }
+   return 1;
+}
+
 int function_esNum(char str[])
 {
     int i=0;
@@ -166,6 +186,18 @@ int function_getStringNumeros(char msj[],char input[])
     return 0;
 }
 
+int getStringNumerosFlotantes(char mensaje[],char input[])
+{
+    char aux[256];
+    getString(mensaje,aux);
+    if(esNumericoFlotante(aux))
+    {
+        strcpy(input,aux);
+        return 1;
+    }
+    return 0;
+}
+
 int menu ( )
 {
     char auxOption[2];
@@ -191,7 +223,7 @@ int menu ( )
 
 void function_validName(char text[])
     {
-        int dentro_de_palabra = 0; // Al principio est· fuera
+        int dentro_de_palabra = 0; // Al principio est√° fuera
         for (int i = 0; text[i] != '\0'; i++)
         {
             if (text[i] == ' ')
@@ -202,7 +234,7 @@ void function_validName(char text[])
             {
                 if (dentro_de_palabra)
                 {
-                    // Ya est·bamos dentro de una palabra
+                    // Ya est√°bamos dentro de una palabra
                     text[i] = tolower(text[i]);
                 }
                 else
