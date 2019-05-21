@@ -45,15 +45,15 @@ int funcion_factorial(int opc1) ;
 /**
  * \brief Solicita un texto al usuario y lo devuelve
  * \param mensaje Es el mensaje a ser mostrado
- * \param input Array donde se cargar· el texto ingresado
+ * \param input Array donde se cargar√° el texto ingresado
  * \return void
  */
 
  //funciones get.
 /**
- * \brief Solicita un n˙mero al usuario y devuelve el resultado
+ * \brief Solicita un n√∫mero al usuario y devuelve el resultado
  * \param mensaje Es el mensaje a ser mostrado
- * \return El n˙mero ingresado por el usuario
+ * \return El n√∫mero ingresado por el usuario
  *
  */
 float function_getFloat(char msj[]) ;
@@ -74,10 +74,18 @@ int function_getInt(char msj[] );
  */
 char function_getChar(char msj[]) ;
 
- /**
- * \brief Verifica si el valor recibido es numÈrico
+/**
+ * \brief Verifica si el valor recibido es num√©rico aceptando flotantes
  * \param str Array con la cadena a ser analizada
- * \return 1 si es n˙merico y 0 si no lo es
+ * \return 1 si es n√∫merico y 0 si no lo es
+ *
+ */
+int esNumericoFlotante(char str[]);
+
+ /**
+ * \brief Verifica si el valor recibido es num√©rico
+ * \param str Array con la cadena a ser analizada
+ * \return 1 si es n√∫merico y 0 si no lo es
  *
  */
 int function_esNum(char str[]) ;
@@ -91,15 +99,15 @@ int function_esNum(char str[]) ;
 int function_esSoloLetras(char str[]) ;
 
 /**
- * \brief Verifica si el valor recibido contiene solo letras y n˙meros
+ * \brief Verifica si el valor recibido contiene solo letras y n√∫meros
  * \param str Array con la cadena a ser analizada
- * \return 1 si contiene solo espacio o letras y n˙meros, y 0 si no lo es
+ * \return 1 si contiene solo espacio o letras y n√∫meros, y 0 si no lo es
  *
  */
 int function_esAlfaNumerico(char str[]) ;
 
 /**
- * \brief Verifica si el valor recibido contiene solo n˙meros, + y -
+ * \brief Verifica si el valor recibido contiene solo n√∫meros, + y -
  * \param str Array con la cadena a ser analizada
  * \return 1 si contiene solo numeros, espacios y un guion.
  *
@@ -117,16 +125,24 @@ void function_getString (char msj[],char input[]) ;
  /**
  * \brief Solicita un texto al usuario y lo devuelve validado.
  * \param char array mensaje a ser mostrado
- * \param char array donde se cargar· el texto ingresado
+ * \param char array donde se cargar√° el texto ingresado
  * \return 1 si el texto contiene solo letras
  */
 int function_getStringLetras(char msj[],char input[]) ;
 
- /**
- * \brief Solicita un texto numÈrico al usuario y lo devuelve valido si es solo numeros.
+/**
+ * \brief Solicita un texto num√©rico al usuario y lo devuelve (acepta flotantes)
  * \param mensaje Es el mensaje a ser mostrado
- * \param input Array donde se cargar· el texto ingresado
- * \return 1 si el texto contiene solo n˙meros
+ * \param input Array donde se cargar√° el texto ingresado
+ * \return 1 si el texto contiene solo n√∫meros
+ */
+int getStringNumerosFlotantes(char mensaje[],char input[]) ;
+
+ /**
+ * \brief Solicita un texto num√©rico al usuario y lo devuelve valido si es solo numeros.
+ * \param mensaje Es el mensaje a ser mostrado
+ * \param input Array donde se cargar√° el texto ingresado
+ * \return 1 si el texto contiene solo n√∫meros
  */
 int function_getStringNumeros(char msj[],char input[]) ;
 
