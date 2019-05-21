@@ -247,5 +247,18 @@ void function_validName(char text[])
         }
     }
 
+char* getDynamicString(char* msg)
+{
+    printf(msg);
 
+    char* pData = (char*)malloc(sizeof(char)*1024);
+
+    scanf("%1023s",pData); // cantidad maxima 1023 (dejamos 1 byte para terminador)
+
+    int len = strlen(pData);
+
+    pData = (char*)realloc(pData,sizeof(char)*(len+1)); //realloc de len (cantidad de letras) + 1  byte por caracter terminador
+
+    return pData;
+}
 
