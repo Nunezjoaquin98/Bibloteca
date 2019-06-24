@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1561417163 source:c:\users\alumno\desktop\nuñez_joaquin_1f_sp\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"dominio.h"
+
+1561417497 source:c:\users\alumno\desktop\nuñez_joaquin_1f_sp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"LinkedList.h"
+	"dominio.h"
+	"input.h"
+
+1561416203 source:c:\users\alumno\desktop\nuñez_joaquin_1f_sp\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561416773 c:\users\alumno\desktop\nuñez_joaquin_1f_sp\linkedlist.h
+
+1561417119 c:\users\alumno\desktop\nuñez_joaquin_1f_sp\dominio.h
+
+1561416553 source:c:\users\alumno\desktop\nuñez_joaquin_1f_sp\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Funciones.h"
+
+1561346451 c:\users\alumno\desktop\nuñez_joaquin_1f_sp\funciones.h
+
+1561417951 source:c:\users\alumno\desktop\nuñez_joaquin_1f_sp\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"dominio.h"
+	"funciones.h"
+
+1561417908 c:\users\alumno\desktop\nuñez_joaquin_1f_sp\input.h
+
